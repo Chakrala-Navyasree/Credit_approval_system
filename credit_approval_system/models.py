@@ -26,3 +26,13 @@ class LoanData(models.Model):
     end_date = models.DateField()
     class Meta:
         db_table = 'loan_data'
+
+class LoanResult(models.Model):
+    id = models.AutoField(primary_key=True)
+    customer_id = models.IntegerField()
+    loan_id= models.IntegerField()
+    loan_approved = models.BooleanField()
+    message = models.TextField()
+    monthly_installment = models.DecimalField(max_digits=10, decimal_places=2)
+    class Meta:
+        db_table = 'loan'
