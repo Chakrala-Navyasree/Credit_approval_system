@@ -14,6 +14,7 @@ class Customer(models.Model):
 
 
 class LoanData(models.Model):
+    id = models.AutoField(primary_key=True)
     customer_id = models.IntegerField()
     loan_id = models.IntegerField()
     loan_amount = models.DecimalField(max_digits=10, decimal_places=2)
